@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>TTC Interactive Demo</title>
+  <meta name="description" content="Interactive prototype of the TTC delivery platform: customer app, business portal, rider app and admin dashboard, all connected.">
+  <meta name="theme-color" content="#0E1726">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="tb-brand" href="../" aria-label="Back to the proposal">
+      <img src="../assets/img/ttc-mark.svg" alt="" width="30" height="30">
+      <span><b>TTC</b><small>Interactive prototype</small></span>
+    </a>
+    <nav class="tabs" role="tablist" aria-label="Apps">
+      <button role="tab" data-tab="customer">📱 Customer</button>
+      <button role="tab" data-tab="business">🏪 Business</button>
+      <button role="tab" data-tab="rider">🏍 Rider</button>
+      <button role="tab" data-tab="admin">🧭 Admin</button>
+      <button role="tab" data-tab="split" class="split-tab">⇆ Side by side</button>
+    </nav>
+    <a class="tb-back" href="../">← Proposal</a>
+  </header>
+
+  <main class="stage">
+    <section class="pane pane-phone" id="pane-customer" hidden>
+      <aside class="guide">
+        <p class="g-eyebrow">Customer app · Android &amp; iOS</p>
+        <h1>Send a package in under 30 seconds.</h1>
+        <ol>
+          <li>Tap <b>Send a package</b>, pick two areas, see the price instantly.</li>
+          <li>Pay with card (test mode), or choose transfer or cash.</li>
+          <li>Watch a verified rider move on the live map.</li>
+          <li>Or tap <b>Ask TTC AI</b> and type <i>“abeg carry food from VI go Surulere”</i>.</li>
+        </ol>
+        <p class="g-tip">Tip: open <b>Side by side</b> to accept your own order as the rider.</p>
+      </aside>
+      <div class="device phone-frame"><div class="phone-notch"></div><div class="phone-screen" id="customer-root"></div></div>
+    </section>
+
+    <section class="pane pane-desk" id="pane-business" hidden>
+      <div class="device desk-frame"><div class="desk-bar"><i></i><i></i><i></i><span>TTC Business</span></div><div class="desk-screen" id="business-root"></div></div>
+    </section>
+
+    <section class="pane pane-phone" id="pane-rider" hidden>
+      <aside class="guide">
+        <p class="g-eyebrow">Rider app · works on low-cost Android</p>
+        <h1>Clear jobs, clear earnings.</h1>
+        <ol>
+          <li>Jobs booked in the Customer app or Business portal appear here.</li>
+          <li><b>Accept</b>, then tap <b>Navigate</b> to open Google Maps.</li>
+          <li>Confirm pickup, then enter the receiver's 4-digit code to finish.</li>
+          <li>Check <b>Earnings</b> and <b>Profile</b> for payouts and verification.</li>
+        </ol>
+        <p class="g-tip">No jobs showing? Book one in the Customer tab first. It waits here for you.</p>
+      </aside>
+      <div class="device phone-frame"><div class="phone-notch"></div><div class="phone-screen" id="rider-root"></div></div>
+    </section>
+
+    <section class="pane pane-desk" id="pane-admin" hidden>
+      <div class="device desk-frame"><div class="desk-bar"><i></i><i></i><i></i><span>TTC Admin</span></div><div class="desk-screen" id="admin-root"></div></div>
+    </section>
+  </main>
+
+  <p class="demo-foot">Prototype for discussion. Final screens follow TTC's approved designs. Prices are examples; TTC sets real prices in the admin dashboard.</p>
+
+  <script src="../assets/vendor/leaflet/leaflet.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

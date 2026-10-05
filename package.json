@@ -1,0 +1,16 @@
+{
+  "name": "ttc-proposal-forge-growth",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "serve": "node scripts/dev-server.mjs",
+    "assets": "node scripts/build-assets.mjs",
+    "pdf": "node scripts/build-pdf.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "^5.0.0",
+    "leaflet": "^1.9.4",
+    "qrcode": "^1.5.4"
+  }
+}
