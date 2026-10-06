@@ -1,7 +1,8 @@
 // The facts the proposal assistant is allowed to use. Keep this in sync with
 // index.html. If a fact is not here, the bot must not invent it.
 export const KNOWLEDGE = `
-PROPOSAL: TTC Delivery Platform, prepared for The Triple-Core (TTC) by Hussein, Forge Growth. Date: October 2026.
+PROPOSAL: TTC Delivery Platform, prepared for The Triple-Core (TTC) by Hussein Yahaya, Forge Growth. Date: October 2026.
+TTC's owners: Farouk, Imran and Haiba. The proposal is addressed to them.
 
 WHAT TTC IS BUILDING (our understanding)
 - TTC is based in Abuja (FCT) and launches in Abuja: Wuse, Maitama, Garki, Asokoro, Jabi, Utako, Gwarinpa, Kubwa, Lugbe and surrounding districts.

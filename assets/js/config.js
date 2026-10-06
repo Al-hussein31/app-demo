@@ -3,6 +3,9 @@
    `npm run pdf` so the PDF matches the website.
    ------------------------------------------------------------------ */
 window.PROPOSAL_CONFIG = {
+  // TTC's owners. Personal links: add ?to=farouk, ?to=imran or ?to=haiba to the site URL.
+  client: { company: "The Triple-Core (TTC)", owners: ["Farouk", "Imran", "Haiba"] },
+
   contact: {
     name: "Hussein",
     company: "Forge Growth Digital Limited",

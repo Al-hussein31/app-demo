@@ -20,7 +20,24 @@ npx hyperframes@0.8.134 preview       # edit visually in HyperFrames Studio
 npx hyperframes@0.8.134 render -f 30 -q high -o ../assets/video/ttc-launch-film.mp4
 ```
 
+A 9:16 version for WhatsApp Status, Reels and TikTok is generated from the same source:
+
+```bash
+python3 film/make_vertical.py          # writes film/vertical/index.html
+cd film/vertical && npx hyperframes@0.8.134 render -f 30 -q high -o ../../assets/video/ttc-launch-film-9x16.mp4
+```
+
 Music and SFX are separate tracks (`film/assets/music.wav`, `film/assets/sfx.wav`), so their levels can be changed independently in Studio.
+
+## Personal links for each owner
+
+Add `?to=` to the site URL and the page and the AI assistant greet that owner by name:
+
+- https://ttc.forgegrowth.ng/?to=farouk
+- https://ttc.forgegrowth.ng/?to=imran
+- https://ttc.forgegrowth.ng/?to=haiba
+
+Owner names live in `assets/js/config.js` (`client.owners`) and in the allowlist in `api/chat.js`.
 
 ## Before sending: fill in your details
 

@@ -9,6 +9,17 @@
     });
   }
 
+  // ---- Personal greeting (?to=farouk) ----
+  var owners = (cfg.client && cfg.client.owners) || [];
+  var toParam = (new URLSearchParams(location.search).get("to") || "").toLowerCase();
+  var viewer = owners.filter(function (o) { return o.toLowerCase() === toParam; })[0] || "";
+  if (viewer) {
+    var others = owners.filter(function (o) { return o !== viewer; });
+    var w = document.getElementById("welcome");
+    w.textContent = "Welcome, " + viewer + ". Built for you" + (others.length ? ", " + others.join(" and ") : "") + ".";
+    w.hidden = false;
+  }
+
   // ---- Contact links ----
   var waText = encodeURIComponent("Hi Hussein, I've gone through the TTC proposal.");
   var waUrl = "https://wa.me/" + (contact.whatsapp || "") + "?text=" + waText;
@@ -99,7 +110,7 @@
     fab.setAttribute("aria-expanded", "true");
     if (!greeted) {
       greeted = true;
-      addMsg("bot", "Hi! I'm the assistant for Forge Growth's TTC proposal. Ask me anything about the plans, the timeline, the free 2 weeks or how the app works.");
+      addMsg("bot", "Hi" + (viewer ? " " + viewer : "") + "! I'm the assistant for Forge Growth's TTC proposal. Ask me anything about the plans, the timeline, the free 2 weeks or how the app works.");
     }
     setTimeout(function () { input.focus(); }, 50);
   }
@@ -151,7 +162,7 @@
       var res = await fetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ mode: "proposal", message: q, history: history })
+        body: JSON.stringify({ mode: "proposal", message: q, history: history, viewer: viewer })
       });
       if (res.ok) reply = (await res.json()).reply;
     } catch (e) { /* fall back below */ }

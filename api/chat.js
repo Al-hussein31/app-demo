@@ -147,7 +147,8 @@ export default async function handler(req, res) {
 
   let system;
   if (mode === "proposal") {
-    system = PROPOSAL_PROMPT;
+    const viewer = ["Farouk", "Imran", "Haiba"].find((n) => n.toLowerCase() === String(body.viewer || "").toLowerCase());
+    system = PROPOSAL_PROMPT + (viewer ? `\n\nYou are talking to ${viewer}, one of TTC's owners. Address them by name naturally (not in every message).` : "");
     // Shows up in Vercel logs, so you can see what TTC asked and add it to the FAQ.
     console.log(JSON.stringify({ type: "proposal_question", at: new Date().toISOString(), question: message }));
   } else if (mode === "booking") {
