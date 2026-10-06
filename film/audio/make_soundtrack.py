@@ -470,10 +470,10 @@ def s_shimmer(d=0.8):
 
 # ---- cue sheet (seconds) — mirrors film/index.html
 # A: cold open
-for k, t in enumerate([0.5, 0.58, 0.66, 0.74, 0.82]):       # L A G O S
+for k, t in enumerate([0.5, 0.58, 0.66, 0.74, 0.82]):       # A B U J A
     place(sfx, s_type(), t, 0.9, -0.2 + 0.1 * k)
 place(sfx, s_tick(), 1.25, 1.0)
-line = "A pharmacy in Lekki needs insulin in Yaba."
+line = "A pharmacy in Wuse 2 needs insulin in Gwarinpa."
 for k in range(len(line)):
     if line[k] != " ":
         place(sfx, s_type(), 2.0 + k * (1.4 / len(line)), 0.7, rng.uniform(-0.3, 0.3))
@@ -499,7 +499,7 @@ place(sfx, s_shimmer(0.9), 10.5, 0.9)
 place(sfx, s_whoosh(0.6, 200, 3000), 11.45, 0.9)
 # C: AI booking
 place(sfx, s_whoosh(0.5, 300, 4000), 12.0, 0.7)
-msg = "abeg carry insulin from my pharmacy for Lekki go Yaba, sharp sharp"
+msg = "abeg carry insulin from my pharmacy for Wuse 2 go Gwarinpa, sharp sharp"
 for k in range(len(msg)):
     if msg[k] != " ":
         place(sfx, s_type(), 12.75 + k * (1.7 / len(msg)), 0.55, rng.uniform(-0.2, 0.2))

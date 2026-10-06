@@ -8,8 +8,8 @@ export function businessView(root) {
   const v = {
     page: "overview", _key: null, map: null,
     rows: [
-      { dropoff: "Yaba", item: "Prescription refill", recipientPhone: "0809 112 4410" },
-      { dropoff: "Ikoyi", item: "Blood pressure monitor", recipientPhone: "0813 290 1172" }
+      { dropoff: "Maitama", item: "Prescription refill", recipientPhone: "0809 112 4410" },
+      { dropoff: "Asokoro", item: "Blood pressure monitor", recipientPhone: "0813 290 1172" }
     ]
   };
   const mine = () => S.orders.filter((o) => o.sender === "business" && o.senderName === B.name);
@@ -17,7 +17,7 @@ export function businessView(root) {
   const chat = createChat({
     defaultPickup: B.pickup, sender: "business", payment: "Invoice",
     greeting: `Hi ${B.contact.split(" ").slice(0, 2).join(" ")}. Tell me what to send. Pickup is ${B.pickup} unless you say otherwise.`,
-    suggestions: ["Send 3 orders: Yaba, Surulere and Ikeja GRA, all medicine", "Urgent insulin to Victoria Island", "Deliver a big carton to Ajah"],
+    suggestions: ["Send 3 orders: Maitama, Asokoro and Gwarinpa, all medicine", "Urgent insulin to Garki", "Deliver a big carton to Kubwa"],
     onBooked: () => render()
   });
 
@@ -43,7 +43,7 @@ export function businessView(root) {
         <div class="panel ai-panel">
           <div class="panel-h"><b><span class="spark">✦</span> Tell TTC what to deliver</b><small>Type or talk, one sentence for many orders</small></div>
           <div class="chat-log compact" data-region="log"></div><div data-region="chips"></div>
-          ${chatInput(chat, "e.g. send 2 orders to Yaba and Surulere")}
+          ${chatInput(chat, "e.g. send 2 orders to Maitama and Jabi")}
         </div>
         <div class="panel map-panel"><div class="panel-h"><b>Riders near you, live</b><small data-region="livecount"></small></div><div class="map-slot" data-map></div></div>
       </div>

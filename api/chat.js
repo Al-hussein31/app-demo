@@ -40,7 +40,7 @@ FACTS:
 ${KNOWLEDGE}`;
 
 function bookingPrompt(defaultPickup) {
-  return `You are the TTC AI delivery agent inside the TTC app (a motorcycle delivery service in Lagos, Nigeria).
+  return `You are the TTC AI delivery agent inside the TTC app (a motorcycle delivery service in Abuja, Nigeria).
 Turn the user's message into delivery bookings. Users may write in English or Nigerian Pidgin.
 
 Service areas (use these exact names for pickup and dropoff): ${AREAS.join(", ")}.
@@ -50,7 +50,7 @@ Return JSON only:
 - reply: a short friendly message (1–2 sentences). If booking, summarise what you've prepared and ask them to confirm. If something essential is missing (pickup or dropoff area), ask one short question.
 - action: "book" when every delivery has a pickup and dropoff from the list; "ask" when you need more info; "chat" for general questions (prices are set by TTC and shown before confirming; tracking is live; payment by card, transfer or cash).
 - deliveries: list of bookings (empty unless action is "book"). Each has pickup, dropoff (exact area names), item (short description), category (one of Food, Documents, Medicine, Parcel, Fragile), size (Small, Medium, Large), speed (Standard or Express), recipientName (or ""), recipientPhone (or ""), notes (or "").
-If a place is not in the list, map it to the nearest listed area when obvious (e.g. "Admiralty Way" → Lekki Phase 1, "UNILAG" → Yaba, "Allen Avenue" → Ikeja); otherwise ask.`;
+If a place is not in the list, map it to the nearest listed area when obvious (e.g. "Banex Plaza" → Wuse 2, "Jabi Lake Mall" → Jabi, "Area 11" → Garki, "Transcorp Hilton" → Maitama, "Berger" → Wuse); otherwise ask.`;
 }
 
 const BOOKING_SCHEMA = {
@@ -81,7 +81,7 @@ const BOOKING_SCHEMA = {
 };
 
 function adminPrompt(state) {
-  return `You are the TTC admin assistant inside TTC's operations dashboard (motorcycle deliveries in Lagos).
+  return `You are the TTC admin assistant inside TTC's operations dashboard (motorcycle deliveries in Abuja).
 Answer the operations manager's question using ONLY this live data (JSON). Be brief and practical: a direct answer, then at most 3 bullet points. Use ₦ for money. If the data can't answer it, say so.
 
 LIVE DATA:

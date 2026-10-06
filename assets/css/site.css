@@ -258,6 +258,8 @@ table.pay { width: 100%; border-collapse: collapse; min-width: 520px; font-size:
 .team-card b { color: #fff; display: block; }
 .team-card .role { color: #FF8A5C; font-size: .86rem; font-weight: 600; display: block; margin: 2px 0 8px; }
 .team-card p { color: #AEB8CB; font-size: .9rem; }
+.team-link { display: inline-block; margin-top: 12px; color: #FF8A5C; font-weight: 700; font-size: .88rem; text-decoration: none; }
+.team-link:hover { text-decoration: underline; }
 .testimonial { margin-top: 40px; display: grid; gap: 24px; align-items: center; }
 @media (min-width: 900px) { .testimonial { grid-template-columns: 340px 1fr; gap: 48px; } }
 .testimonial .video-frame { aspect-ratio: 9 / 16; max-width: 340px; width: 100%; margin: 0 auto; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
@@ -387,7 +389,7 @@ table.pay { width: 100%; border-collapse: collapse; min-width: 520px; font-size:
   .team-card, .project { background: #fff; border-color: var(--line); padding: 12px; }
   .team-card b, .project b, .sub-h { color: var(--ink); }
   .team-card p, .project p { color: var(--ink-2); }
-  .team-card .role, .project i { color: var(--orange-ink); }
+  .team-card .role, .project i, .team-link { color: var(--orange-ink); }
   .project span { color: var(--muted); }
   .avatar { width: 36px; height: 36px; font-size: .9rem; margin-bottom: 8px; }
   .faq-wrap { grid-template-columns: 1fr; gap: 8px; }

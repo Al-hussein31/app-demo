@@ -4,6 +4,7 @@ export const KNOWLEDGE = `
 PROPOSAL: TTC Delivery Platform, prepared for The Triple-Core (TTC) by Hussein, Forge Growth. Date: October 2026.
 
 WHAT TTC IS BUILDING (our understanding)
+- TTC is based in Abuja (FCT) and launches in Abuja: Wuse, Maitama, Garki, Asokoro, Jabi, Utako, Gwarinpa, Kubwa, Lugbe and surrounding districts.
 - A delivery network, mainly for businesses: restaurants, pharmacies, small businesses (SMEs) and vendors enter what they want delivered and TTC connects a motorcycle rider to deliver it, like Uber for packages. Individuals can also send packages.
 - Three sides: senders (businesses and customers), riders, and TTC operations.
 - Because businesses are the core, the Business Portal is part of the first build, not a later phase.
@@ -23,7 +24,7 @@ WHAT IS BUILT (included in both plans)
 5. Live map tracking: customers and businesses watch the rider in real time and can share a tracking link.
 6. Paystack payments: card and bank transfer in the app, plus cash on delivery confirmed in the dashboard.
 7. Automatic distance-based pricing: TTC sets base fare, price per km, minimum fare and size rules in the dashboard; quotes are calculated automatically.
-8. AI agent: customers and businesses can book by chat or voice ("pick up from my shop in Lekki and deliver to Yaba"); AI support answers common questions; admin assistant answers questions like "which riders are free in Ikeja?". Normal tap-to-book always works too; AI is optional for users.
+8. AI agent: customers and businesses can book by chat or voice ("pick up from my shop in Wuse 2 and deliver to Gwarinpa"); AI support answers common questions; admin assistant answers questions like "which riders are free in Garki?". Normal tap-to-book always works too; AI is optional for users.
 9. Launch: push notifications, Google Play and Apple App Store submission, fixing issues raised by store review, privacy policy and store data-safety setup, handover guide and admin training.
 
 TECHNOLOGY
@@ -89,12 +90,13 @@ WHAT TTC PROVIDES
 
 ABOUT FORGE GROWTH
 - Company: Forge Growth Digital Limited (RC 9437238), Nigeria. Builds AI and WhatsApp automation systems; trusted by 100+ Nigerian businesses.
-- Team of 4: Hussein Yahaya (Founder & Lead Engineer, single point of contact), Muhammad Mustapha (Senior Developer, React Native apps), Salman Sanusi (Senior Frontend Engineer, business portal, admin dashboard and screen design), Umar Farouk (Backend Engineer, API, database, tracking, payments, security).
-- Projects: Forge Growth (WhatsApp growth systems with AI replies and automatic follow-ups for Nigerian businesses), NaijaMind (Hussein's fine-tuned language model that understands Nigerian Pidgin, business context and culture; this experience powers TTC's Pidgin AI agent), Surefire Bookings (UK event management and ticketing platform), Artisans Manager (two-sided marketplace connecting local clients with skilled tradespeople through transparent bidding, no lead fees for professionals), Meshgryd Systems (custom platforms, AI-driven workflow automation and connected IoT infrastructure), Lodenix (open-source API giving AI tools real-world signal).
+- Team of 4: Hussein Yahaya (Founder & Lead Engineer, single point of contact, full-stack TypeScript engineer), Muhammad Mustapha (Senior Developer, React Native apps), Salman Sanusi (Senior Frontend Engineer, business portal, admin dashboard and screen design), Umar Farouk (Backend Engineer, API, database, tracking, payments, security).
+- Projects: Forge Growth (WhatsApp growth systems with AI replies and automatic follow-ups for Nigerian businesses), Surefire Bookings (UK event management and ticketing platform), Artisans Manager (two-sided marketplace connecting local clients with skilled tradespeople through transparent bidding, no lead fees for professionals), Meshgryd Systems (custom platforms, AI-driven workflow automation and connected IoT infrastructure).
+- Hussein's portfolio: https://hussein.forgegrowth.ng/ (full-stack developer and founder; works in TypeScript daily across architecture, client systems and business strategy, and uses Go for systems work).
 - Client testimonial: Kemi Sarah of Sarah Legal Consult: "The work was smooth. It really saved my time, and it was a good job delivery." (video on the proposal page).
 - If Hussein is unavailable, the team continues; the code is documented and lives in TTC's repository, so TTC is never locked in.
 
-DEMO PRICING (illustrative only, TTC sets real prices): base fare ₦800 + ₦180 per km, minimum ₦1,500; medium package +15%, large +35%; express +30%.
+DEMO PRICING (illustrative only, TTC sets real prices; the demo uses Abuja districts): base fare ₦800 + ₦180 per km, minimum ₦1,500; medium package +15%, large +35%; express +30%.
 
 CONTACT: Hussein, Forge Growth. WhatsApp/phone +234 704 503 3664, email info@forgegrowth.ng.
 `;

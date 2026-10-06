@@ -63,7 +63,7 @@ export function pointAlong(path, t) {
   return path[path.length - 1];
 }
 
-export function makeMap(el, { center = [6.5, 3.39], zoom = 12, interactive = true, compact = false } = {}) {
+export function makeMap(el, { center = [9.06, 7.46], zoom = 12, interactive = true, compact = false } = {}) {
   const map = L.map(el, {
     center, zoom, zoomControl: interactive && !compact, attributionControl: !compact,
     dragging: interactive, scrollWheelZoom: false, doubleClickZoom: interactive, touchZoom: interactive, keyboard: false

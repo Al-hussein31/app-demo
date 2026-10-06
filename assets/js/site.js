@@ -24,7 +24,8 @@
       var initials = (m.name || "?").split(/\s+/).map(function (w) { return w[0]; }).join("").slice(0, 2).toUpperCase();
       var avatar = m.photo ? '<img src="' + esc(m.photo) + '" alt="">' : esc(initials);
       return '<article class="team-card"><div class="avatar">' + avatar + '</div><b>' + esc(m.name) +
-        '</b><span class="role">' + esc(m.role) + '</span><p>' + esc(m.note) + '</p></article>';
+        '</b><span class="role">' + esc(m.role) + '</span><p>' + esc(m.note) + '</p>' +
+        (m.link ? '<a class="team-link" href="' + esc(m.link) + '" target="_blank" rel="noopener">Portfolio ↗</a>' : '') + '</article>';
     }).join("");
   }
 

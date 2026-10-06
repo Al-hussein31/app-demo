@@ -27,7 +27,6 @@ Music and SFX are separate tracks (`film/assets/music.wav`, `film/assets/sfx.wav
 Edit **`assets/js/config.js`** for contact, team, projects and videos. Still worth checking:
 
 - team photos (optional): add `photo: "assets/img/team/name.jpg"`
-- the NaijaMind and Lodenix links point to hussein.forgegrowth.ng; swap in direct links if they have their own pages
 
 The proposal's facts for the AI assistant live in **`api/_knowledge.js`**. If you change a price or promise on the page, change it there too.
 

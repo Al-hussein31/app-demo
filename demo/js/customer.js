@@ -8,7 +8,7 @@ const CATS = ["Food", "Documents", "Medicine", "Parcel", "Fragile"];
 export function customerView(root) {
   const v = {
     screen: "home", orderId: null, sheet: null, receiptId: null,
-    form: { pickup: "Yaba", dropoff: "Ikeja", item: "", category: "Parcel", size: "Small", speed: "Standard", recipientName: "Bola", recipientPhone: "0802 334 7781", notes: "" },
+    form: { pickup: "Jabi", dropoff: "Maitama", item: "", category: "Parcel", size: "Small", speed: "Standard", recipientName: "Bola", recipientPhone: "0802 334 7781", notes: "" },
     pay: "Card", rating: 0, _key: null, map: null
   };
   const mine = () => S.orders.filter((o) => o.sender === "customer");
@@ -17,7 +17,7 @@ export function customerView(root) {
   const chat = createChat({
     sender: "customer",
     greeting: "Hi Amaka 👋 Tell me what to send and where. You can type or talk, in English or Pidgin.",
-    suggestions: ["Pick up from my pharmacy in Lekki, deliver to Yaba", "abeg carry food from VI go Surulere sharp sharp", "Send my laptop from Yaba to Ikeja GRA"],
+    suggestions: ["Pick up from my pharmacy in Wuse 2, deliver to Gwarinpa", "abeg carry food from Garki go Lugbe sharp sharp", "Send my laptop from Jabi to Maitama"],
     onBooked: (orders) => { if (orders.length === 1) go("track", orders[0].id); else go("activity"); }
   });
 
@@ -47,7 +47,7 @@ export function customerView(root) {
       <div class="track-sheet" data-region="sheet"></div><div data-region="modal"></div></div>`,
     chat: () => `<div class="scr scr-chat"><header class="scr-head ai-head"><button class="back" data-go="home" aria-label="Back">‹</button>
       <div><h2><span class="spark">✦</span> TTC AI</h2><small>Books deliveries for you</small></div></header>
-      <div class="scr-body chat-log" data-region="log"></div><div data-region="chips"></div>${chatInput(chat, "e.g. send food from VI to Yaba")}</div>`
+      <div class="scr-body chat-log" data-region="log"></div><div data-region="chips"></div>${chatInput(chat, "e.g. send food from Garki to Wuse 2")}</div>`
   };
 
   function sendForm() {
@@ -122,7 +122,7 @@ export function customerView(root) {
         <div class="hello"><small>${greet},</small><h2>${esc(S.customer.name.split(" ")[0])} 👋</h2></div>
         <div class="avatar-sm">${initials(S.customer.name)}</div>
       </div>
-      <button class="ai-bar" data-go="chat"><span class="spark">✦</span><span>Ask TTC AI<small>“Send my laptop from Yaba to Ikeja”</small></span><span class="mic">🎙</span></button>
+      <button class="ai-bar" data-go="chat"><span class="spark">✦</span><span>Ask TTC AI<small>“Send my laptop from Jabi to Maitama”</small></span><span class="mic">🎙</span></button>
       <button class="send-card" data-go="send">
         <div><b>Send a package</b><small>Instant price · rider in minutes</small></div><span class="arrow">→</span>
       </button>

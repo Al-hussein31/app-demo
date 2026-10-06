@@ -25,31 +25,31 @@ const min = 60000;
 export const S = {
   pricing: { base: 800, perKm: 180, minimum: 1500, medium: 15, large: 35, express: 30 },
   customer: { name: "Amaka Obi", phone: "0803 555 0142" },
-  business: { name: "Medway Pharmacy", pickup: "Lekki Phase 1", contact: "Mrs. Adeyemi", staff: ["Mrs. Adeyemi (Owner)", "Kunle (Dispatch)", "Grace (Front desk)"] },
+  business: { name: "Medway Pharmacy", pickup: "Wuse 2", contact: "Mrs. Bello", staff: ["Mrs. Bello (Owner)", "Ahmed (Dispatch)", "Grace (Front desk)"] },
   myRiderId: "r1",
   riders: [
-    { id: "r1", name: "Tunde Bakare", rating: 4.9, plate: "LND 482 QA", area: "Lekki Phase 1", online: true, trips: 412, earnedToday: 9400, approved: true },
-    { id: "r2", name: "Ibrahim Musa", rating: 4.8, plate: "KJA 113 RT", area: "Victoria Island", online: true, trips: 655, earnedToday: 12100, approved: true },
-    { id: "r3", name: "Chinedu Okafor", rating: 4.7, plate: "EKY 920 LG", area: "Yaba", online: true, trips: 287, earnedToday: 7300, approved: true },
-    { id: "r4", name: "Kola Adebayo", rating: 4.9, plate: "AGL 301 KT", area: "Ikeja", online: true, trips: 531, earnedToday: 10850, approved: true },
-    { id: "r5", name: "Sadiq Bello", rating: 4.6, plate: "APP 774 XA", area: "Surulere", online: true, trips: 198, earnedToday: 5600, approved: true },
-    { id: "r6", name: "Emeka Nwosu", rating: 4.8, plate: "LSD 559 JN", area: "Ikeja GRA", online: false, trips: 344, earnedToday: 0, approved: true },
-    { id: "r7", name: "Femi Lawal", rating: 4.7, plate: "FKJ 640 BB", area: "Gbagada", online: true, trips: 402, earnedToday: 8200, approved: true }
+    { id: "r1", name: "Tunde Bakare", rating: 4.9, plate: "ABJ 482 QA", area: "Wuse 2", online: true, trips: 412, earnedToday: 9400, approved: true },
+    { id: "r2", name: "Ibrahim Musa", rating: 4.8, plate: "BWR 113 RT", area: "Maitama", online: true, trips: 655, earnedToday: 12100, approved: true },
+    { id: "r3", name: "Chinedu Okafor", rating: 4.7, plate: "KUJ 920 LG", area: "Utako", online: true, trips: 287, earnedToday: 7300, approved: true },
+    { id: "r4", name: "Abubakar Sani", rating: 4.9, plate: "ABJ 301 KT", area: "Garki", online: true, trips: 531, earnedToday: 10850, approved: true },
+    { id: "r5", name: "Sadiq Bello", rating: 4.6, plate: "GWA 774 XA", area: "Gwarinpa", online: true, trips: 198, earnedToday: 5600, approved: true },
+    { id: "r6", name: "Emeka Nwosu", rating: 4.8, plate: "KWL 559 JN", area: "Jabi", online: false, trips: 344, earnedToday: 0, approved: true },
+    { id: "r7", name: "Musa Danladi", rating: 4.7, plate: "ABJ 640 BB", area: "Wuye", online: true, trips: 402, earnedToday: 8200, approved: true }
   ],
   applicants: [
-    { id: "a1", name: "Yusuf Danjuma", area: "Ajah", submitted: now - 52 * min, checks: [
+    { id: "a1", name: "Yusuf Danjuma", area: "Lugbe", submitted: now - 52 * min, checks: [
       { ok: true, text: "Name on ID matches licence" },
       { ok: true, text: "Licence valid until Aug 2028" },
       { ok: true, text: "Face photo matches ID photo" },
-      { ok: true, text: "Motorcycle papers readable, plate EPE 218 YT" }
+      { ok: true, text: "Motorcycle papers readable, plate ABJ 218 YT" }
     ] },
-    { id: "a2", name: "Peter Eze", area: "Surulere", submitted: now - 3 * 60 * min, checks: [
+    { id: "a2", name: "Peter Eze", area: "Nyanya", submitted: now - 3 * 60 * min, checks: [
       { ok: true, text: "Name on ID matches licence" },
       { ok: false, text: "Licence expired in March 2026, ask for renewal" },
       { ok: true, text: "Face photo matches ID photo" },
-      { ok: true, text: "Motorcycle papers readable, plate SMK 551 HD" }
+      { ok: true, text: "Motorcycle papers readable, plate KUJ 551 HD" }
     ] },
-    { id: "a3", name: "Bolaji Ogun", area: "Ikeja", submitted: now - 26 * 60 * min, checks: [
+    { id: "a3", name: "Haruna Bello", area: "Kubwa", submitted: now - 26 * 60 * min, checks: [
       { ok: true, text: "Name on ID matches licence" },
       { ok: true, text: "Licence valid until Jan 2027" },
       { ok: true, text: "Face photo matches ID photo" },
@@ -190,11 +190,11 @@ export function etaMinutes(o) {
 
 // ---------- Seed data ----------
 const SIM_SENDERS = [
-  { name: "Mama Tee Kitchen", pickup: "Victoria Island", items: ["Jollof rice x3", "Small chops tray", "Pepper soup"], category: "Food" },
-  { name: "Glow Beauty Store", pickup: "Ikeja", items: ["Skincare set", "Hair products"], category: "Parcel" },
-  { name: "Chops & Co", pickup: "Yaba", items: ["Shawarma x2", "Burger meal"], category: "Food" },
-  { name: "Medway Pharmacy", pickup: "Lekki Phase 1", items: ["Prescription refill", "Malaria pack"], category: "Medicine", business: true },
-  { name: "Ade Gadgets", pickup: "Ikeja GRA", items: ["Phone charger", "Earbuds"], category: "Parcel" }
+  { name: "Mama Tee Kitchen", pickup: "Garki", items: ["Jollof rice x3", "Small chops tray", "Pepper soup"], category: "Food" },
+  { name: "Glow Beauty Store", pickup: "Jabi", items: ["Skincare set", "Hair products"], category: "Parcel" },
+  { name: "Chops & Co", pickup: "Utako", items: ["Shawarma x2", "Burger meal"], category: "Food" },
+  { name: "Medway Pharmacy", pickup: "Wuse 2", items: ["Prescription refill", "Malaria pack"], category: "Medicine", business: true },
+  { name: "Ade Gadgets", pickup: "Wuse", items: ["Phone charger", "Earbuds"], category: "Parcel" }
 ];
 const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
@@ -211,13 +211,13 @@ function simOrder(withSender) {
 // Past deliveries for history tables
 (function seedHistory() {
   const past = [
-    { pickup: "Lekki Phase 1", dropoff: "Ikoyi", item: "Insulin pack", category: "Medicine", sender: "business", ago: 35 },
-    { pickup: "Lekki Phase 1", dropoff: "Victoria Island", item: "Prescription refill", category: "Medicine", sender: "business", ago: 80 },
-    { pickup: "Lekki Phase 1", dropoff: "Ajah", item: "Baby formula x2", category: "Medicine", sender: "business", ago: 140 },
-    { pickup: "Yaba", dropoff: "Surulere", item: "Birthday cake", category: "Fragile", sender: "customer", ago: 60 * 26 },
-    { pickup: "Ikeja", dropoff: "Maryland", item: "Documents for signing", category: "Documents", sender: "customer", ago: 60 * 75 },
-    { pickup: "Victoria Island", dropoff: "Lekki Phase 1", item: "Jollof rice x3", category: "Food", sender: "sim", name: "Mama Tee Kitchen", ago: 20 },
-    { pickup: "Ikeja", dropoff: "Ogudu", item: "Skincare set", category: "Parcel", sender: "sim", name: "Glow Beauty Store", ago: 50 }
+    { pickup: "Wuse 2", dropoff: "Maitama", item: "Insulin pack", category: "Medicine", sender: "business", ago: 35 },
+    { pickup: "Wuse 2", dropoff: "Asokoro", item: "Prescription refill", category: "Medicine", sender: "business", ago: 80 },
+    { pickup: "Wuse 2", dropoff: "Gwarinpa", item: "Baby formula x2", category: "Medicine", sender: "business", ago: 140 },
+    { pickup: "Jabi", dropoff: "Gudu", item: "Birthday cake", category: "Fragile", sender: "customer", ago: 60 * 26 },
+    { pickup: "Garki", dropoff: "Central Area", item: "Documents for signing", category: "Documents", sender: "customer", ago: 60 * 75 },
+    { pickup: "Garki", dropoff: "Wuse 2", item: "Jollof rice x3", category: "Food", sender: "sim", name: "Mama Tee Kitchen", ago: 20 },
+    { pickup: "Jabi", dropoff: "Life Camp", item: "Skincare set", category: "Parcel", sender: "sim", name: "Glow Beauty Store", ago: 50 }
   ];
   const riders = ["r2", "r3", "r4", "r5", "r7"];
   past.forEach((p, i) => {
@@ -230,7 +230,7 @@ function simOrder(withSender) {
     if (o.payment === "Transfer" && i === 3) o.paid = true;
   });
   // One transfer awaiting confirmation for the admin payments screen
-  const t = createOrder({ pickup: "Ikeja GRA", dropoff: "Magodo", item: "Laptop", category: "Fragile", size: "Medium" }, { sender: "sim", senderName: "Ade Gadgets", payment: "Transfer", silent: true });
+  const t = createOrder({ pickup: "Wuse", dropoff: "Katampe", item: "Laptop", category: "Fragile", size: "Medium" }, { sender: "sim", senderName: "Ade Gadgets", payment: "Transfer", silent: true });
   t.status = "delivered"; t.riderId = "r4"; t.createdAt = Date.now() - 95 * min; t.events = [{ s: "delivered", t: t.createdAt + 40 * min }];
   S.orders.sort((a, b) => b.createdAt - a.createdAt);
   // Two live deliveries already on the road

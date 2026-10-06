@@ -23,15 +23,15 @@ async function callApi(payload) {
 
 // ---------- Booking agent ----------
 const ALIASES = [
-  ["victoria island", "Victoria Island"], ["v.i", "Victoria Island"], ["vi", "Victoria Island"],
-  ["lekki phase 1", "Lekki Phase 1"], ["lekki", "Lekki Phase 1"], ["admiralty", "Lekki Phase 1"],
-  ["ikeja gra", "Ikeja GRA"], ["allen", "Ikeja"], ["computer village", "Ikeja"], ["ikeja", "Ikeja"],
-  ["unilag", "Yaba"], ["yaba", "Yaba"], ["sabo", "Yaba"],
-  ["lagos island", "Lagos Island"], ["marina", "Lagos Island"], ["idumota", "Lagos Island"], ["island", "Lagos Island"],
-  ["ebute metta", "Ebute Metta"], ["ebute-metta", "Ebute Metta"],
-  ["sangotedo", "Sangotedo"], ["ajah", "Ajah"], ["ikoyi", "Ikoyi"], ["surulere", "Surulere"], ["apapa", "Apapa"],
-  ["festac", "Festac"], ["gbagada", "Gbagada"], ["maryland", "Maryland"], ["ogudu", "Ogudu"], ["oshodi", "Oshodi"],
-  ["magodo", "Magodo"], ["ojota", "Ojota"], ["ketu", "Ketu"]
+  ["wuse 2", "Wuse 2"], ["wuse ii", "Wuse 2"], ["wuse2", "Wuse 2"], ["banex", "Wuse 2"],
+  ["berger", "Wuse"], ["wuse", "Wuse"],
+  ["maitama", "Maitama"], ["transcorp", "Maitama"], ["asokoro", "Asokoro"],
+  ["area 11", "Garki"], ["area 1", "Garki"], ["garki", "Garki"],
+  ["central business district", "Central Area"], ["central area", "Central Area"], ["cbd", "Central Area"],
+  ["utako", "Utako"], ["jabi lake", "Jabi"], ["jabi", "Jabi"],
+  ["gwarinpa", "Gwarinpa"], ["gwarimpa", "Gwarinpa"], ["life camp", "Life Camp"], ["kubwa", "Kubwa"],
+  ["airport road", "Lugbe"], ["lugbe", "Lugbe"], ["apo", "Apo"], ["gudu", "Gudu"], ["lokogoma", "Lokogoma"],
+  ["wuye", "Wuye"], ["katampe", "Katampe"], ["jahi", "Jahi"], ["mabushi", "Mabushi"], ["nyanya", "Nyanya"], ["karu", "Nyanya"]
 ];
 
 function findAreas(text) {
@@ -78,7 +78,7 @@ export function localBooking(message, defaultPickup) {
   if (!pickup && defaultPickup) pickup = defaultPickup;
   if (!pickup && drops.length >= 2) pickup = drops.shift();
   drops = [...new Set(drops)].filter((d) => d !== pickup);
-  if (!pickup) return { reply: "Sure. Where should the rider pick up from? (e.g. Lekki, Yaba, Ikeja)", action: "ask", deliveries: [] };
+  if (!pickup) return { reply: "Sure. Where should the rider pick up from? (e.g. Wuse 2, Garki, Jabi)", action: "ask", deliveries: [] };
   if (!drops.length) return { reply: `Got it, pickup from ${pickup}. Where are we delivering to?`, action: "ask", deliveries: [] };
   const item = category === "Parcel" ? "Package" : category;
   return {

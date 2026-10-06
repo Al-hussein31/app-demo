@@ -85,7 +85,7 @@ export function fleetMap(el, { filter = () => true } = {}) {
     }
   }
   sync();
-  map.setView([6.53, 3.40], 11.5);
+  map.setView([9.065, 7.455], 12);
   return { map, sync, destroy: () => map.remove() };
 }
 

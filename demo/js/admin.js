@@ -24,7 +24,7 @@ export function adminView(root) {
 
   function pageShell() {
     if (v.page === "overview") return `
-      <header class="desk-head"><div><h2>Operations</h2><p class="muted">Live across Lagos · ${new Date().toLocaleDateString("en-NG", { weekday: "long", day: "numeric", month: "long" })}</p></div></header>
+      <header class="desk-head"><div><h2>Operations</h2><p class="muted">Live across Abuja · ${new Date().toLocaleDateString("en-NG", { weekday: "long", day: "numeric", month: "long" })}</p></div></header>
       <div data-region="kpis"></div>
       <div class="admin-grid">
         <div class="panel map-panel tall"><div class="panel-h"><b>Live map</b><small><span class="lg lg-busy"></span>On a job <span class="lg lg-idle"></span>Free</small></div><div class="map-slot" data-map></div></div>
@@ -32,7 +32,7 @@ export function adminView(root) {
           <div class="panel-h"><b><span class="spark">✦</span> Ask the ops assistant</b><small>Answers from live data</small></div>
           <div class="chat-log compact" data-region="ai"></div>
           <div class="chat-chips" data-region="aichips"></div>
-          <form class="chat-form" data-ai-form><input type="text" placeholder="e.g. which riders are free in Ikeja?" maxlength="300" aria-label="Ask the ops assistant"><button type="submit" class="chat-send" aria-label="Send">↑</button></form>
+          <form class="chat-form" data-ai-form><input type="text" placeholder="e.g. which riders are free in Garki?" maxlength="300" aria-label="Ask the ops assistant"><button type="submit" class="chat-send" aria-label="Send">↑</button></form>
         </div>
       </div>
       <div class="panel"><div class="panel-h"><b>Deliveries</b><small>Most recent first</small></div><div data-region="table"></div></div>`;
@@ -76,7 +76,7 @@ export function adminView(root) {
     return intro + v.ai.msgs.map((m) => `<div class="cm ${m.role === "user" ? "cm-user" : "cm-bot"}">${m.role === "user" ? esc(m.text) : `<p>${esc(m.text)}</p>`}</div>`).join("") +
       (v.ai.busy ? `<div class="cm cm-bot cm-typing"><span></span><span></span><span></span></div>` : "");
   }
-  const aiChips = () => v.ai.msgs.length ? "" : ["Which riders are free near Ikeja?", "How much have we made today?", "Who are the top riders today?"].map((q) => `<button data-ask>${q}</button>`).join("");
+  const aiChips = () => v.ai.msgs.length ? "" : ["Which riders are free near Wuse?", "How much have we made today?", "Who are the top riders today?"].map((q) => `<button data-ask>${q}</button>`).join("");
 
   async function ask(q) {
     q = q.trim();
@@ -124,7 +124,7 @@ export function adminView(root) {
   }
 
   function preview() {
-    const trips = [["Lekki Phase 1", "Yaba"], ["Victoria Island", "Surulere"], ["Ikeja", "Maryland"], ["Ajah", "Ikoyi"]];
+    const trips = [["Wuse 2", "Gwarinpa"], ["Garki", "Lugbe"], ["Jabi", "Maitama"], ["Asokoro", "Kubwa"]];
     return `<table class="tbl"><thead><tr><th>Trip</th><th>Distance</th><th class="r">Now</th><th class="r">New</th></tr></thead><tbody>
       ${trips.map(([a, b]) => {
         const now = quote({ pickup: a, dropoff: b });
