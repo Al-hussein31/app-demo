@@ -170,7 +170,7 @@ section[id] { scroll-margin-top: 64px; }
 .try-line p { flex: 1 1 320px; color: #D5DBE7; }
 .try-line q { color: #fff; font-weight: 600; }
 .try-line .spark { font-size: 1.4rem; }
-.launch-video { margin-top: 56px; }
+.launch-video { margin-top: 56px; scroll-margin-top: 84px; }
 .lv-title { color: #fff; font-size: clamp(1.4rem, 2.6vw, 2rem); margin-bottom: 4px; }
 .launch-video .video-frame { box-shadow: 0 40px 80px rgba(0,0,0,.45); border: 1px solid var(--dark-line); }
 .launch-video p { color: #AEB8CB; margin: 6px 0 16px; }
