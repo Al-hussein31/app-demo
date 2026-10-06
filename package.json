@@ -6,7 +6,8 @@
     "dev": "vercel dev",
     "serve": "node scripts/dev-server.mjs",
     "assets": "node scripts/build-assets.mjs",
-    "pdf": "node scripts/build-pdf.mjs"
+    "pdf": "node scripts/build-pdf.mjs",
+    "build:pages": "node scripts/build-static.mjs"
   },
   "devDependencies": {
     "@fontsource-variable/plus-jakarta-sans": "^5.0.0",

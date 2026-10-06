@@ -5,6 +5,8 @@
 //   admin    – the admin assistant: answers questions about the live demo state
 //
 // Requires the GEMINI_API_KEY environment variable. GEMINI_MODEL is optional.
+// The core is platform-neutral: Vercel uses the default export below,
+// Cloudflare Pages uses functions/api/chat.js.
 
 import { KNOWLEDGE } from "./_knowledge.js";
 import { AREAS } from "./_areas.js";
@@ -88,8 +90,7 @@ LIVE DATA:
 ${state}`;
 }
 
-async function callGemini({ model, system, history, message, json }) {
-  const key = process.env.GEMINI_API_KEY;
+async function callGemini({ key, model, system, history, message, json }) {
   const contents = [
     ...history.map((m) => ({ role: m.role === "user" ? "user" : "model", parts: [{ text: m.text }] })),
     { role: "user", parts: [{ text: message }] }
@@ -124,21 +125,18 @@ function matchArea(name) {
     || null;
 }
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
-  if (!process.env.GEMINI_API_KEY) return res.status(503).json({ error: "AI not configured" });
+export async function chat({ method, body, ip, env }) {
+  if (method !== "POST") return [405, { error: "POST only" }];
+  if (!env.GEMINI_API_KEY) return [503, { error: "AI not configured" }];
+  if (limited(ip)) return [429, { error: "Too many messages — please wait a few minutes." }];
 
-  const ip = (req.headers["x-forwarded-for"] || "").split(",")[0].trim() || "local";
-  if (limited(ip)) return res.status(429).json({ error: "Too many messages — please wait a few minutes." });
-
-  let body = req.body;
   if (typeof body === "string") {
     try { body = JSON.parse(body); } catch { body = {}; }
   }
   const mode = body?.mode;
   const message = String(body?.message || "").slice(0, MAX_MESSAGE).trim();
   if (!message || !["proposal", "booking", "admin"].includes(mode)) {
-    return res.status(400).json({ error: "Bad request" });
+    return [400, { error: "Bad request" }];
   }
   const history = (Array.isArray(body.history) ? body.history : [])
     .slice(-MAX_HISTORY)
@@ -157,36 +155,43 @@ export default async function handler(req, res) {
     system = adminPrompt(String(body.state || "{}").slice(0, 8000));
   }
 
-  const opts = { system, history, message, json: mode === "booking" };
+  const opts = { key: env.GEMINI_API_KEY, system, history, message, json: mode === "booking" };
   let text;
   try {
-    text = await callGemini({ ...opts, model: process.env.GEMINI_MODEL || DEFAULT_MODEL });
+    text = await callGemini({ ...opts, model: env.GEMINI_MODEL || DEFAULT_MODEL });
   } catch (e) {
-    if (e.status === 404 && !process.env.GEMINI_MODEL) {
+    if (e.status === 404 && !env.GEMINI_MODEL) {
       try {
         text = await callGemini({ ...opts, model: FALLBACK_MODEL });
       } catch (e2) {
         console.error("gemini_error", e2.status, e2.body?.slice(0, 300));
-        return res.status(502).json({ error: "AI unavailable" });
+        return [502, { error: "AI unavailable" }];
       }
     } else {
       console.error("gemini_error", e.status, e.body?.slice(0, 300));
-      return res.status(e.status === 429 ? 429 : 502).json({ error: "AI unavailable" });
+      return [e.status === 429 ? 429 : 502, { error: "AI unavailable" }];
     }
   }
 
-  if (mode !== "booking") return res.status(200).json({ reply: text });
+  if (mode !== "booking") return [200, { reply: text }];
 
   let parsed;
   try {
     parsed = JSON.parse(text);
   } catch {
-    return res.status(200).json({ reply: "Sorry, I didn't catch that. Where should we pick up, and where are we delivering?", action: "ask", deliveries: [] });
+    return [200, { reply: "Sorry, I didn't catch that. Where should we pick up, and where are we delivering?", action: "ask", deliveries: [] }];
   }
   const deliveries = (parsed.deliveries || [])
     .map((d) => ({ ...d, pickup: matchArea(d.pickup), dropoff: matchArea(d.dropoff) }))
     .filter((d) => d.pickup && d.dropoff && d.pickup !== d.dropoff)
     .slice(0, 10);
   const action = parsed.action === "book" && deliveries.length ? "book" : parsed.action === "book" ? "ask" : parsed.action;
-  return res.status(200).json({ reply: parsed.reply || "", action, deliveries });
+  return [200, { reply: parsed.reply || "", action, deliveries }];
+}
+
+// Vercel / Node adapter (also used by scripts/dev-server.mjs)
+export default async function handler(req, res) {
+  const ip = (req.headers["x-forwarded-for"] || "").split(",")[0].trim() || "local";
+  const [status, data] = await chat({ method: req.method, body: req.body, ip, env: process.env });
+  res.status(status).json(data);
 }

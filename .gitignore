@@ -6,3 +6,4 @@ film/snapshots
 film/renders
 assets/video/.*hf-transaction*
 assets/video/work-*
+dist

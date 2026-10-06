@@ -47,12 +47,21 @@ Edit **`assets/js/config.js`** for contact, team, projects and videos. Still wor
 
 The proposal's facts for the AI assistant live in **`api/_knowledge.js`**. If you change a price or promise on the page, change it there too.
 
-## Deploy to Vercel (about 5 minutes)
+## Deploy to Cloudflare Pages (recommended: forgegrowth.ng is already on Cloudflare)
+
+1. Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git** → choose this repo and branch.
+2. Build settings: framework preset **None**, build command `npm run build:pages`, build output directory `dist`.
+3. **Settings → Variables and Secrets** → add `GEMINI_API_KEY` as a **Secret** (Production). Optional: `GEMINI_MODEL`. Redeploy.
+4. **Custom domains → Set up a custom domain** → `ttc.forgegrowth.ng`. Cloudflare creates the DNS record for you.
+
+`/api/chat` runs as a Pages Function from `functions/api/chat.js`. Logs: the project's **Functions → Real-time logs** (search `proposal_question`).
+
+## Or deploy to Vercel
 
 1. vercel.com → **Add New → Project** → import this GitHub repo. Framework preset: **Other**. No build command.
 2. **Settings → Environment Variables** → add `GEMINI_API_KEY` = your Gemini key. Redeploy.
    Optional: `GEMINI_MODEL` (default `gemini-2.5-flash`).
-3. **Settings → Domains** → add `ttc.forgegrowth.ng`. At your domain provider, add a **CNAME** record: name `ttc`, value `cname.vercel-dns.com`.
+3. **Settings → Domains** → add `ttc.forgegrowth.ng`. In Cloudflare DNS, add a **CNAME** record: name `ttc`, value `cname.vercel-dns.com`, proxy status **DNS only** (grey cloud).
 
 Without a key everything still works: the bots fall back to answering from the FAQ, and the booking agent uses a built-in parser.
 
