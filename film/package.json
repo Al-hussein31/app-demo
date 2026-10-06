@@ -1,0 +1,11 @@
+{
+  "name": "ttc-launch-film",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audio": "python3 audio/make_soundtrack.py",
+    "preview": "npx hyperframes@0.8.134 preview",
+    "check": "npx hyperframes@0.8.134 check",
+    "render": "npx hyperframes@0.8.134 render -f 30 -q high -o ../assets/video/ttc-launch-film.mp4"
+  }
+}

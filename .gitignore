@@ -1,3 +1,8 @@
 node_modules
 .vercel
 .env*
+film/assets/soundtrack-preview.wav
+film/snapshots
+film/renders
+assets/video/.*hf-transaction*
+assets/video/work-*

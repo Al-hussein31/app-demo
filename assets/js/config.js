@@ -1,42 +1,43 @@
 /* ------------------------------------------------------------------
-   EDIT THIS FILE to update your details. Everything marked TODO is a
-   placeholder — replace it before sending the link to TTC.
+   EDIT THIS FILE to update your details. After editing, re-run
+   `npm run pdf` so the PDF matches the website.
    ------------------------------------------------------------------ */
 window.PROPOSAL_CONFIG = {
   contact: {
     name: "Hussein",
-    company: "Forge Growth",
-    phone: "+234 000 000 0000",          // TODO: your phone number
-    whatsapp: "2340000000000",           // TODO: WhatsApp number, digits only, with country code
-    email: "hello@forgegrowth.ng",       // TODO: confirm your email
+    company: "Forge Growth Digital Limited",
+    phone: "+234 704 503 3664",
+    whatsapp: "2347045033664",
+    email: "info@forgegrowth.ng",
     website: "https://www.forgegrowth.ng"
   },
 
-  // TODO: replace names/roles for your 4-person team. Photo is optional (path or URL).
+  // Photo is optional (path like "assets/img/team/hussein.jpg" or a URL).
   team: [
-    { name: "Hussein", role: "Founder & Lead Engineer", note: "Owns delivery end to end. Your single point of contact.", photo: "" },
-    { name: "Team member", role: "Mobile Engineer · React Native", note: "Customer and rider apps for Android and iOS.", photo: "" },
-    { name: "Team member", role: "Backend Engineer", note: "API, database, live tracking, payments and security.", photo: "" },
-    { name: "Team member", role: "Product Designer & QA", note: "Screens, store graphics and testing on real phones.", photo: "" }
+    { name: "Hussein Yahaya", role: "Founder & Lead Engineer", note: "Owns delivery end to end and is your single point of contact. Builds AI systems for Nigerian businesses.", photo: "" },
+    { name: "Muhammad Mustapha", role: "Senior Developer", note: "React Native lead for the customer and rider apps on Android and iOS.", photo: "" },
+    { name: "Salman Sanusi", role: "Senior Frontend Engineer", note: "Business portal, admin dashboard and every screen's look and feel.", photo: "" },
+    { name: "Umar Farouk", role: "Backend Engineer", note: "API, database, live tracking, Paystack payments and security.", photo: "" }
   ],
 
-  // TODO: confirm each one-line description.
   projects: [
-    { name: "Surefire Bookings", url: "https://www.surefirebookings.co.uk/", tag: "Booking platform · UK", desc: "Online booking and scheduling platform for a UK business." },
-    { name: "Artisans Manager", url: "https://www.artisansmanager.com/", tag: "SaaS platform", desc: "Platform for managing artisans, jobs and customers in one place." },
-    { name: "Meshgryd Systems", url: "https://meshgrydsystems.com/", tag: "Business systems", desc: "Company website and systems for Meshgryd." },
-    { name: "Forge Growth", url: "https://www.forgegrowth.ng/", tag: "Our studio", desc: "Our own studio site: apps, automation and AI for growing businesses." }
+    { name: "Forge Growth", url: "https://www.forgegrowth.ng/", tag: "WhatsApp automation · Nigeria", desc: "WhatsApp growth systems that capture leads, reply instantly with AI and follow up automatically. Trusted by 100+ Nigerian businesses." },
+    { name: "NaijaMind", url: "https://hussein.forgegrowth.ng/", tag: "AI · Nigerian Pidgin", desc: "A fine-tuned language model that understands Nigerian Pidgin, business context and culture. The same know-how powers TTC's Pidgin AI agent." },
+    { name: "Surefire Bookings", url: "https://www.surefirebookings.co.uk/", tag: "Events & ticketing · UK", desc: "Event management and ticketing platform: events, sessions, ticket sales, meeting requests and 1:1 appointments." },
+    { name: "Artisans Manager", url: "https://www.artisansmanager.com/", tag: "Two-sided marketplace", desc: "Connects local clients with skilled tradespeople through transparent bidding, with no lead fees for professionals." },
+    { name: "Meshgryd Systems", url: "https://meshgrydsystems.com/", tag: "Platforms · AI · IoT", desc: "Software firm building custom platforms, AI-driven workflow automation and connected IoT infrastructure for scaling businesses." },
+    { name: "Lodenix", url: "https://hussein.forgegrowth.ng/", tag: "Open source · AI", desc: "Gives AI tools real-world signal through a single API call." }
   ],
 
-  // Paste your video testimonial here. Either a YouTube/Vimeo/Loom EMBED url,
-  // or a direct .mp4 file path (e.g. "assets/video/testimonial.mp4").
   testimonial: {
-    videoUrl: "",                         // TODO: video testimonial
-    quote: "",                            // optional: one strong line from the video
-    person: "",                           // optional: client name
-    company: ""                           // optional: client company
+    videoUrl: "assets/video/testimonial.mp4",
+    poster: "assets/video/testimonial-poster.jpg",
+    quote: "The work was smooth. It really saved my time, and it was a good job delivery.",
+    person: "Kemi Sarah",
+    company: "Sarah Legal Consult"
   },
 
-  // Optional: the motion graphics launch video, once it's ready.
-  launchVideoUrl: ""
+  // The motion-graphics launch film.
+  launchVideoUrl: "assets/video/ttc-launch-film.mp4",
+  launchVideoPoster: "assets/video/ttc-launch-film-poster.jpg"
 };

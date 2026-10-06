@@ -71,7 +71,7 @@ GUARANTEES
 
 FREE EXTRAS (both plans)
 - This live interactive demo and proposal.
-- A motion-graphics launch video TTC can post on social media at launch.
+- A motion-graphics launch film TTC can post on social media at launch. It is already made: a 50-second film with an original Afro-house soundtrack and sound design, on the proposal page (section 02). It will be updated with the final app screens before launch.
 - A draft TTC logo and brand colours (TTC can use it or replace it).
 - Play Store and App Store listing graphics and text.
 
@@ -85,14 +85,16 @@ WHAT TTC PROVIDES
 - Apple and Google developer accounts and a Paystack business account in TTC's name.
 - Business details for store listings, terms and privacy-policy text (Forge Growth can provide a starting template).
 - Delivery pricing rules (base fare, per km, minimum).
-- Designs: if TTC's designer has designs, Forge Growth builds them as supplied. If some screens aren't ready, Forge Growth's designer fills the gaps so the build isn't held up. The demo is a prototype to show the experience; the final look follows TTC's approved designs.
+- Designs: if TTC's designer has designs, Forge Growth builds them as supplied. If some screens aren't ready, Forge Growth's senior frontend engineer designs them in TTC's style so the build isn't held up. The demo is a prototype to show the experience; the final look follows TTC's approved designs.
 
 ABOUT FORGE GROWTH
-- Founder and lead engineer: Hussein. A team of 4: lead engineer, mobile engineer, backend engineer, product designer and QA.
-- Past projects: Surefire Bookings, Artisans Manager, Meshgryd Systems, Forge Growth.
+- Company: Forge Growth Digital Limited (RC 9437238), Nigeria. Builds AI and WhatsApp automation systems; trusted by 100+ Nigerian businesses.
+- Team of 4: Hussein Yahaya (Founder & Lead Engineer, single point of contact), Muhammad Mustapha (Senior Developer, React Native apps), Salman Sanusi (Senior Frontend Engineer, business portal, admin dashboard and screen design), Umar Farouk (Backend Engineer, API, database, tracking, payments, security).
+- Projects: Forge Growth (WhatsApp growth systems with AI replies and automatic follow-ups for Nigerian businesses), NaijaMind (Hussein's fine-tuned language model that understands Nigerian Pidgin, business context and culture; this experience powers TTC's Pidgin AI agent), Surefire Bookings (UK event management and ticketing platform), Artisans Manager (two-sided marketplace connecting local clients with skilled tradespeople through transparent bidding, no lead fees for professionals), Meshgryd Systems (custom platforms, AI-driven workflow automation and connected IoT infrastructure), Lodenix (open-source API giving AI tools real-world signal).
+- Client testimonial: Kemi Sarah of Sarah Legal Consult: "The work was smooth. It really saved my time, and it was a good job delivery." (video on the proposal page).
 - If Hussein is unavailable, the team continues; the code is documented and lives in TTC's repository, so TTC is never locked in.
 
 DEMO PRICING (illustrative only, TTC sets real prices): base fare ₦800 + ₦180 per km, minimum ₦1,500; medium package +15%, large +35%; express +30%.
 
-CONTACT: Hussein, Forge Growth. Use the WhatsApp or email buttons on the proposal page.
+CONTACT: Hussein, Forge Growth. WhatsApp/phone +234 704 503 3664, email info@forgegrowth.ng.
 `;

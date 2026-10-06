@@ -39,10 +39,10 @@
   }
 
   // ---- Videos ----
-  function mountVideo(el, url) {
+  function mountVideo(el, url, poster) {
     if (!el || !url) return false;
     if (/\.(mp4|webm|mov)(\?|$)/i.test(url)) {
-      el.innerHTML = '<video src="' + esc(url) + '" controls playsinline preload="metadata"></video>';
+      el.innerHTML = '<video src="' + esc(url) + '" controls playsinline preload="none"' + (poster ? ' poster="' + esc(poster) + '"' : "") + '></video>';
     } else {
       var src = url
         .replace(/youtube\.com\/watch\?v=([\w-]+).*/, "youtube.com/embed/$1")
@@ -54,7 +54,7 @@
     return true;
   }
   var t = cfg.testimonial || {};
-  if (mountVideo(document.querySelector('[data-video="testimonial"]'), t.videoUrl)) {
+  if (mountVideo(document.querySelector('[data-video="testimonial"]'), t.videoUrl, t.poster)) {
     document.getElementById("testimonial").hidden = false;
     if (t.quote) {
       var bq = document.getElementById("testimonial-quote");
@@ -63,7 +63,7 @@
       bq.querySelector("footer").textContent = [t.person, t.company].filter(Boolean).join(" · ");
     }
   }
-  if (mountVideo(document.querySelector('[data-video="launch"]'), cfg.launchVideoUrl)) {
+  if (mountVideo(document.querySelector('[data-video="launch"]'), cfg.launchVideoUrl, cfg.launchVideoPoster)) {
     document.getElementById("launch-video").hidden = false;
   }
 
